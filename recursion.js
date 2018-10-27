@@ -1,4 +1,4 @@
-function recursion(tree) {
+module.exports = function recursion(tree) {
   let arr = [];
 
   let fillArr = function(obj, step) {    

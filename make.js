@@ -1,6 +1,6 @@
-function make(...args) {
-
+module.exports = function make(...args) {
   let arr = Array.from(args);
+
   let fn = function (a,b) {
     return a + b;
   };
