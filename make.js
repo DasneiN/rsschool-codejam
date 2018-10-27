@@ -1,13 +1,12 @@
 module.exports = function make(...args) {
   let arr = Array.from(args);
 
-  let fn = function (a,b) {
+  function fn(a, b) {
     return a + b;
-  };
-  
-  let innerFunc = function(...args) {
+  }
 
-    if (args.length == 1 && (typeof args[0] == 'function') ) {
+  function innerFunc(...args) {
+    if (args.length === 1 && (typeof args[0] === 'function')) {
       fn = args[0];
     } else {
       arr = arr.concat(Array.from(args));
@@ -17,9 +16,8 @@ module.exports = function make(...args) {
   }
 
   innerFunc.valueOf = function () {
-    return arr.reduce( fn );
-  }
+    return arr.reduce(fn);
+  };
 
   return innerFunc;
-  
-}
+};

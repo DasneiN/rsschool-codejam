@@ -1,5 +1,5 @@
 module.exports = function sumOfOther(arr) {
-  let summ = arr.reduce( (ac,v) => ac + v );
+  const summ = arr.reduce((ac, v) => ac + v);
 
-  return arr.map( v => summ - v );
-}
+  return arr.map(v => summ - v);
+};
